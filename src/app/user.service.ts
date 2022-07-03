@@ -1,20 +1,21 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+
 import { CounterService } from './counter.service';
 
 @Injectable()
-export class UsersService{
+export class UserService {
   activeUsers = ['Max', 'Anna'];
   inactiveUsers = ['Chris', 'Manu'];
 
-  constructor(private counterService: CounterService){}
+  constructor(private counterService: CounterService) {}
 
-  makeActive(id: number){
+  setToActive(id: number) {
     this.activeUsers.push(this.inactiveUsers[id]);
     this.inactiveUsers.splice(id, 1);
-    this.counterService.incrementInactiveToActive();
+    this.counterService.incrementInActiveToActive();
   }
 
-  makeInactive(id: number){
+  setToInactive(id: number) {
     this.inactiveUsers.push(this.activeUsers[id]);
     this.activeUsers.splice(id, 1);
     this.counterService.incrementActiveToInactive();

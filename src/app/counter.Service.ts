@@ -1,17 +1,14 @@
-import { Injectable } from "@angular/core";
+export class CounterService {
+  activeToInactiveCounter = 0;
+  inactiveToActiveCounter = 0;
 
-@Injectable()
-export class CounterService{
-  countActiveUsers: number = 0;
-  countInactiveUsers: number = 0;
-
-  incrementActiveToInactive(){
-    this.countInactiveUsers++;
-    console.log(this.countInactiveUsers);
+  incrementActiveToInactive() {
+    this.activeToInactiveCounter++;
+    console.log('Active to Inactive: ' + this.activeToInactiveCounter);
   }
 
-  incrementInactiveToActive(){
-    this.countActiveUsers++;
-    console.log(this.countActiveUsers);
+  incrementInActiveToActive() {
+    this.inactiveToActiveCounter++;
+    console.log('Inactive to Active: ' + this.inactiveToActiveCounter);
   }
 }
