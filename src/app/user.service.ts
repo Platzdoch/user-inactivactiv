@@ -15,7 +15,7 @@ this.inacticeUser.splice(id,1);
 this.counterservie.incrementinActiveToactive();
 }
 
-setinToActiv(id:number){
+  onSetToInactive(id:number){
   this.inacticeUser.push(this.acticeUser[id]);
   this.acticeUser.splice(id,1);  
   this.counterservie.incrementActiveToInactive();
