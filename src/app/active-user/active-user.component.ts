@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-active-user',
